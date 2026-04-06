@@ -28,11 +28,25 @@ export default function BeforeAfterShowcase() {
     <section className="container mx-auto px-4 py-8 md:py-16">
       <div className="text-center mb-8">
         <h3 className="text-2xl md:text-3xl font-bold">
-          Our Latest <span className="text-[#e2d42c]">Client</span> Before & After
+          Recent <span className="text-[#e2d42c]">Client Growth</span> Wins
         </h3>
         <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-2">
-          Click on the images to see the transformation in detail
+          See how we help service businesses improve positioning, increase lead flow, and create more sales
+          opportunities.
         </p>
+        <div className="flex flex-wrap justify-center gap-3 mt-6 max-w-3xl mx-auto">
+          {["Better positioning", "Stronger trust", "Higher conversion", "More inbound and outbound opportunity capture"].map(
+            (label) => (
+              <span
+                key={label}
+                className="text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full bg-gray-100 dark:bg-[#111] border border-[#e2d42c]/40 text-gray-800 dark:text-gray-200"
+              >
+                {label}
+              </span>
+            ),
+          )}
+        </div>
+        <p className="text-gray-500 dark:text-gray-500 text-sm mt-6">Click an image to view the site transformation in detail</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

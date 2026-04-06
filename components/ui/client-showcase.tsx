@@ -32,10 +32,10 @@ export default function ClientShowcase() {
     <section className="container mx-auto px-4 py-8 md:py-16">
       <div className="text-center mb-8">
         <h3 className="text-2xl md:text-3xl font-bold mb-4">
-          More Client <span className="text-[#e2d42c]">Success</span> Stories
+          More Commercial <span className="text-[#e2d42c]">Growth</span> Results
         </h3>
         <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          Click on any website to see how we've helped these local businesses transform their online presence
+          Examples of how we help service businesses turn their online presence and outreach into booked opportunities.
         </p>
       </div>
 
