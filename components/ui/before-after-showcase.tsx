@@ -46,63 +46,12 @@ export default function BeforeAfterShowcase() {
             ),
           )}
         </div>
-        <p className="text-gray-500 dark:text-gray-500 text-sm mt-6">Click an image to view the site transformation in detail</p>
+        {/* <p className="text-gray-500 dark:text-gray-500 text-sm mt-6">Click an image to view the site transformation in detail</p> */}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {beforeAfter.map((item) => (
-          <div
-            key={item.id}
-            className="relative cursor-pointer rounded-[25px] overflow-hidden transition-all duration-300 group"
-            onClick={() => setActiveImage(item.id)}
-          >
-            <div className="relative h-[300px] w-full overflow-hidden rounded-[25px] border-2 border-transparent transition-all duration-300 group-hover:border-[#e2d42c] group-hover:shadow-lg group-hover:shadow-[#e2d42c]/30">
-              <Image
-                src={item.image || "/placeholder.svg"}
-                alt={item.title}
-                fill
-                style={{ objectFit: "cover", objectPosition: "top" }}
-                className="transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                <h4 className="text-white font-bold text-lg">{item.title}</h4>
-                <p className="text-[#e2d42c] text-sm">Click to view details</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      
 
-      {/* Popup Image */}
-      {activeImage && (
-        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-90 p-4">
-          <div className="relative max-w-5xl w-full">
-            <button
-              className="absolute -top-12 right-0 text-white hover:text-[#e2d42c] text-xl font-bold"
-              onClick={() => setActiveImage(null)}
-            >
-              Close ×
-            </button>
-            <div className="bg-[#111] rounded-[25px] overflow-hidden">
-              <div className="relative h-[500px] w-full">
-                <Image
-                  src={beforeAfter.find((c) => c.id === activeImage)?.image || ""}
-                  alt={beforeAfter.find((c) => c.id === activeImage)?.title || ""}
-                  fill
-                  style={{ objectFit: "contain" }}
-                  className="rounded-t-[25px]"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2 text-[#e2d42c]">
-                  {beforeAfter.find((c) => c.id === activeImage)?.title}
-                </h3>
-                <p className="text-white text-lg">{beforeAfter.find((c) => c.id === activeImage)?.description}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+     
     </section>
   )
 }
