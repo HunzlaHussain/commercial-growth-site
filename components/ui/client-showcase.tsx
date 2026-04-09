@@ -1,32 +1,36 @@
 "use client"
 
-import { useState } from "react"
-import Image from "next/image"
-
 export default function ClientShowcase() {
-  const [activeImage, setActiveImage] = useState<number | null>(null)
-
-  const clients = [
+  const results = [
     {
-      id: 1,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sfdf22ggbp-w-jfscFL6d2Zw3EMBxuJhi1hZhL7udXT.png",
-      title: "Plumbing Geeks",
-      description: "Increased leads by 8X with a modern, conversion-focused website redesign",
+      id: "blacktop",
+      name: "Blacktop Growth Co.",
+      body: "Helped generate 34 qualified opportunities in 90 days and supported the sales process to create $412,000 in quoted commercial asphalt work.",
+      metric: "34 qualified opportunities",
+      timeframe: "90 days",
     },
     {
-      id: 2,
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2114134fdadsarf-BiYzm0jMwWcN0XJ4Pnv6lipTFO1rwI.png",
-      title: "WCC Plumbing",
-      description: "Doubled monthly bookings with a professional website and lead capture system",
+      id: "cleanflow",
+      name: "CleanFlow Facility Services",
+      body: "Generated 27 qualified meetings in 60 days and helped build a tighter follow-up process that contributed to $96,000 in new recurring contract value.",
+      metric: "27 qualified meetings",
+      timeframe: "60 days",
     },
     {
-      id: 3,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/123232531fgs-nXc2rNsegfjLkJ7oLCG4kfloAdIeuA.png",
-      title: "ProRooter & Septic",
-      description: "Achieved 300% ROI within 3 months of website launch",
+      id: "northpeak",
+      name: "NorthPeak Commercial HVAC",
+      body: "Created 41 qualified opportunities in 4 months and supported sales conversion across service agreements, retrofit discussions, and replacements, influencing $685,000 in pipeline.",
+      metric: "41 qualified opportunities",
+      timeframe: "4 months",
     },
-  ]
+    {
+      id: "summit",
+      name: "Summit Edge Painting",
+      body: "Generated 22 qualified commercial opportunities in 75 days and helped improve bid follow-up, contributing to $238,000 in won and active proposal value.",
+      metric: "22 qualified opportunities",
+      timeframe: "75 days",
+    },
+  ] as const
 
   return (
     <section className="container mx-auto px-4 py-8 md:py-16">
@@ -39,60 +43,25 @@ export default function ClientShowcase() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {clients.map((client) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {results.map((r) => (
           <div
-            key={client.id}
-            className="relative cursor-pointer rounded-[25px] overflow-hidden transition-all duration-300 group"
-            onClick={() => setActiveImage(client.id)}
+            key={r.id}
+            className="rounded-2xl border border-[#e2d42c]/40 bg-white/70 dark:bg-[#111]/60 backdrop-blur-sm p-6 sm:p-7 shadow-sm hover:shadow-lg hover:shadow-[#e2d42c]/10 transition-all duration-300"
           >
-            <div className="relative h-[220px] w-full overflow-hidden rounded-[25px] border-2 border-transparent transition-all duration-300 group-hover:border-[#e2d42c] group-hover:shadow-lg group-hover:shadow-[#e2d42c]/30">
-              <Image
-                src={client.image || "/placeholder.svg"}
-                alt={client.title}
-                fill
-                style={{ objectFit: "cover", objectPosition: "top" }}
-                className="transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                <h4 className="text-white font-bold text-lg">{client.title}</h4>
-                <p className="text-[#e2d42c] text-sm">Click to view details</p>
-              </div>
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              <span className="inline-flex items-center rounded-full bg-[#e2d42c]/15 text-[#6b5f00] dark:text-[#e2d42c] border border-[#e2d42c]/30 px-3 py-1 text-xs font-semibold">
+                {r.metric}
+              </span>
+              <span className="inline-flex items-center rounded-full bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-gray-200 border border-gray-200 dark:border-white/10 px-3 py-1 text-xs font-medium">
+                {r.timeframe}
+              </span>
             </div>
+            <h4 className="text-lg sm:text-xl font-bold tracking-tight">{r.name}</h4>
+            <p className="mt-3 text-sm sm:text-[15px] leading-relaxed text-gray-600 dark:text-gray-400">{r.body}</p>
           </div>
         ))}
       </div>
-
-      {/* Popup Image */}
-      {activeImage && (
-        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-90 p-4">
-          <div className="relative max-w-5xl w-full">
-            <button
-              className="absolute -top-12 right-0 text-white hover:text-[#e2d42c] text-xl font-bold"
-              onClick={() => setActiveImage(null)}
-            >
-              Close ×
-            </button>
-            <div className="bg-[#111] rounded-[25px] overflow-hidden">
-              <div className="relative h-[500px] w-full">
-                <Image
-                  src={clients.find((c) => c.id === activeImage)?.image || ""}
-                  alt="Client Website"
-                  fill
-                  style={{ objectFit: "contain" }}
-                  className="rounded-t-[25px]"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2 text-[#e2d42c]">
-                  {clients.find((c) => c.id === activeImage)?.title}
-                </h3>
-                <p className="text-white text-lg">{clients.find((c) => c.id === activeImage)?.description}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   )
 }
