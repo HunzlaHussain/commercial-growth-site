@@ -3,6 +3,8 @@
 import { useEffect, useRef } from "react"
 import { X } from "lucide-react"
 
+import { BOOKING_CALL_CAL_LINK } from "@/components/home/constants"
+
 interface CalendarModalProps {
   onClose: () => void
 }
@@ -63,7 +65,7 @@ export default function CalendarModal({ onClose }: CalendarModalProps) {
         Cal.ns["jaafar-from-local-bloom"]("inline", {
           elementOrSelector: "#my-cal-inline",
           config: { "layout": "month_view" },
-          calLink: "jaafar-zerrouq/jaafar-from-local-bloom",
+          calLink: "${BOOKING_CALL_CAL_LINK}",
         });
 
         Cal.ns["jaafar-from-local-bloom"]("ui", {

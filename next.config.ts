@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  /** Hide the bottom-left dev toolbar (“building…”, issue count, etc.) in development */
+  devIndicators: false,
   eslint: {
     ignoreDuringBuilds: true,
   },

@@ -1,9 +1,8 @@
 "use client"
 import HomeHeader from "@/components/home/home-header"
+import { BOOKING_CALL_URL } from "@/components/home/constants"
 import type { Metadata } from "next"
-import { useTheme } from "next-themes"
 import Link from "next/link"
-import { useEffect, useState } from "react"
 
 // export const metadata: Metadata = {
 //   title: "Client Partnership Terms & Conditions | LocalBloom",
@@ -11,32 +10,13 @@ import { useEffect, useState } from "react"
 // }
 
 export default function TermsOfServicePage() {
-  const [isCalendarOpen, setIsCalendarOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-
-  // After mounting, we can safely show the UI
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
   const handleContactClick = () => {
-    window.location.href =
-      "mailto:info@localbloom.io?subject=Commercial Lead Generation Inquiry&body=Hi LocalBloom team,%0D%0A%0D%0AI'm interested in learning more about your commercial lead generation and growth system.%0D%0A%0D%0APlease contact me to discuss qualified appointments, pipeline growth, and revenue.%0D%0A%0D%0AThank you!"
-  }
-
-  const handleToggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark")
+    window.open(BOOKING_CALL_URL, "_blank", "noopener,noreferrer")
   }
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#0d0d0d] text-black dark:text-white">
-       <HomeHeader
-        mounted={mounted}
-        theme={theme}
-        onToggleTheme={handleToggleTheme}
-        onContactClick={handleContactClick}
-      />
+       <HomeHeader onContactClick={handleContactClick} />
 
       <main className="container mx-auto px-4 py-12 md:py-16 max-w-3xl">
         <div className="text-center mb-10 md:mb-14">
