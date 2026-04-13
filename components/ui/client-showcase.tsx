@@ -33,12 +33,10 @@ export default function ClientShowcase() {
   ] as const
 
   return (
-    <section className="container mx-auto px-4 py-8 md:py-16">
+    <section className="container mx-auto px-4">
       <div className="text-center mb-8">
-        <h3 className="text-2xl md:text-3xl font-bold mb-4">
-          More Commercial <span className="text-[#e2d42c]">Growth</span> Results
-        </h3>
-        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        <h2 className="cg-section-h2 mb-4 max-w-3xl mx-auto">More Commercial Growth Results</h2>
+        <p className="cg-body-lead max-w-2xl mx-auto">
           Examples of how we help service businesses turn their online presence and outreach into booked opportunities.
         </p>
       </div>
@@ -47,18 +45,21 @@ export default function ClientShowcase() {
         {results.map((r) => (
           <div
             key={r.id}
-            className="rounded-2xl border border-[#e2d42c]/40 bg-white/70 dark:bg-[#111]/60 backdrop-blur-sm p-6 sm:p-7 shadow-sm hover:shadow-lg hover:shadow-[#e2d42c]/10 transition-all duration-300"
+            className="rounded-2xl border border-brand-border bg-white shadow-sm transition-shadow overflow-hidden"
           >
-            <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="inline-flex items-center rounded-full bg-[#e2d42c]/15 text-[#6b5f00] dark:text-[#e2d42c] border border-[#e2d42c]/30 px-3 py-1 text-xs font-semibold">
-                {r.metric}
-              </span>
-              <span className="inline-flex items-center rounded-full bg-gray-100 text-gray-700 dark:bg-white/5 dark:text-gray-200 border border-gray-200 dark:border-white/10 px-3 py-1 text-xs font-medium">
-                {r.timeframe}
-              </span>
+            <div className="h-1 bg-brand-signal" aria-hidden />
+            <div className="p-6 sm:p-7">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span className="inline-flex items-center rounded-full bg-brand-cloud text-brand-navy border border-brand-border px-3 py-1 text-xs font-semibold">
+                  {r.metric}
+                </span>
+                <span className="inline-flex items-center rounded-full bg-brand-cloud text-brand-slate border border-brand-border px-3 py-1 text-xs font-medium">
+                  {r.timeframe}
+                </span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold tracking-tight text-brand-navy">{r.name}</h3>
+              <p className="mt-3 text-sm sm:text-[15px] leading-relaxed text-brand-slate">{r.body}</p>
             </div>
-            <h4 className="text-lg sm:text-xl font-bold tracking-tight">{r.name}</h4>
-            <p className="mt-3 text-sm sm:text-[15px] leading-relaxed text-gray-600 dark:text-gray-400">{r.body}</p>
           </div>
         ))}
       </div>

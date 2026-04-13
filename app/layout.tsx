@@ -1,18 +1,22 @@
 import type React from "react"
 import "./globals.css"
-import { Inter } from "next/font/google"
+import { Inter, Manrope } from "next/font/google"
 import { ThemeProvider } from "@/components/ui/theme-provider"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" })
 
 export const metadata = {
-  title: "commercial-growth - Commercial Lead Generation | Predictable Pipeline of Jobs",
+  title: "Commercial Growth — Commercial Lead Generation | Predictable Pipeline of Jobs",
   description:
-    "commercial-growth helps commercial asphalt, cleaning, HVAC, and painting companies generate qualified leads, book more sales appointments, and grow revenue with a proven lead generation system.",
+    "Commercial Growth helps commercial asphalt, cleaning, HVAC, and painting companies generate qualified leads, book more sales appointments, and grow revenue with a proven lead generation system.",
   icons: {
-    icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fav-2Wz7iwrmp7qWAoAJZ0rWYgggSfnsW6.png",
-    apple: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fav-2Wz7iwrmp7qWAoAJZ0rWYgggSfnsW6.png",
-    shortcut: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fav-2Wz7iwrmp7qWAoAJZ0rWYgggSfnsW6.png",
+    icon: [
+      { url: "/Commercial_Growth_Logo_Assets/icon.svg", type: "image/svg+xml" },
+      { url: "/Commercial_Growth_Logo_Assets/icon.png", type: "image/png" },
+    ],
+    apple: "/Commercial_Growth_Logo_Assets/icon.png",
+    shortcut: "/Commercial_Growth_Logo_Assets/icon.png",
   },
   generator: "v0.dev",
 }
@@ -25,20 +29,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link
-          rel="icon"
-          href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fav-2Wz7iwrmp7qWAoAJZ0rWYgggSfnsW6.png"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
-              name: "commercial-growth",
+              name: "Commercial Growth",
               description:
                 "Commercial lead generation system helping service businesses generate qualified leads, book more sales appointments, and grow revenue with a predictable pipeline.",
-              url: "https://localbloom.io",
+              url: "https://commercial-growth.com",
               telephone: "+1-555-123-4567",
               address: {
                 "@type": "PostalAddress",
@@ -60,16 +60,16 @@ export default function RootLayout({
                 closes: "17:00",
               },
               sameAs: [
-                "https://www.facebook.com/localbloom",
-                "https://www.instagram.com/localbloom",
-                "https://twitter.com/localbloom",
+                "https://www.facebook.com/commercialgrowth",
+                "https://www.instagram.com/commercialgrowth",
+                "https://twitter.com/commercialgrowth",
               ],
             }),
           }}
         />
       </head>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+      <body className={`${inter.variable} ${manrope.variable} font-sans`}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
         </ThemeProvider>
       </body>

@@ -15,24 +15,35 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0d0d0d] text-black dark:text-white">
-      <HomeHeader onContactClick={handleContactClick} />
+    <div className="min-h-screen bg-background text-foreground">
+      <div className="bg-brand-navy text-white">
+        <HomeHeader onContactClick={handleContactClick} />
+        <HomeHero onContactClick={handleContactClick} />
+      </div>
 
-      <HomeHero onContactClick={handleContactClick} />
+      <section className="bg-brand-cloud py-20 md:py-28 lg:py-[120px]">
+        <BeforeAfterShowcase />
+      </section>
 
-      {/* Before/After Section */}
-      <BeforeAfterShowcase />
+      <section id="results" className="bg-white py-20 md:py-28 lg:py-[120px] scroll-mt-24">
+        <ClientShowcase />
+      </section>
 
-      {/* Client Showcase Section */}
-      <ClientShowcase />
+      <section className="bg-brand-cloud py-20 md:py-28 lg:py-[120px]">
+        <HomeServices />
+      </section>
 
-      <HomeServices />
+      <section className="bg-white py-20 md:py-28 lg:py-[120px]">
+        <HomeTestimonial />
+      </section>
 
-      <HomeTestimonial />
+      <section className="bg-brand-cloud py-20 md:py-28 lg:py-[120px]">
+        <HomeFinalCTA onContactClick={handleContactClick} />
+      </section>
 
-      <HomeFinalCTA onContactClick={handleContactClick} />
-
-      <HomeFooter />
+      <div className="bg-brand-navy text-white">
+        <HomeFooter />
+      </div>
     </div>
   )
 }

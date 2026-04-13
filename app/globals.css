@@ -2,22 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
-  --accent-color: 226, 212, 44; /* #e2d42c */
-}
-
-.dark {
-  --foreground-rgb: 255, 255, 255;
-  --background-rgb: 13, 13, 13; /* #0d0d0d */
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -25,48 +9,51 @@ body {
 }
 
 @layer base {
+  /* HSL values aligned to Commercial Growth Brand Book hex */
+  /* Cloud White #F8FAFC · Steel Slate #334155 · Border Gray #CBD5E1 · Signal Orange #F97316 */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --background: 210 40% 98%;
+    --foreground: 215 25% 27%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 215 25% 27%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --popover-foreground: 215 25% 27%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --radius: 0.5rem;
+    --border: 213 27% 84%;
+    --input: 213 27% 84%;
+    --ring: 25 95% 53%;
+    --radius: 1rem;
   }
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    /* Midnight Navy #0F172A */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 14%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 47% 16%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 47% 18%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 222 47% 18%;
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --border: 217 33% 22%;
+    --input: 217 33% 22%;
+    --ring: 25 95% 53%;
   }
 }
 
@@ -75,7 +62,30 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
-    @apply antialiased;
+    @apply bg-background text-foreground antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading text-balance;
+  }
+}
+
+/* Commercial Growth Brand Book — type scale (H1/H2) + major body (18–20px) */
+@layer components {
+  .cg-hero-h1 {
+    @apply font-heading font-bold tracking-tight text-white;
+    line-height: 1.1;
+    font-size: clamp(2.25rem, 4.5vw, 4rem);
+  }
+  .cg-section-h2 {
+    @apply font-heading font-bold tracking-tight text-brand-navy leading-tight;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  }
+  .cg-body-lead {
+    @apply text-lg md:text-xl leading-relaxed text-brand-slate;
   }
 }

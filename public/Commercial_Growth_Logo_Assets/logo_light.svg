@@ -1,0 +1,16 @@
+<svg width="2000" height="500" viewBox="0 0 2000 500" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="2000" height="500" fill="none" rx="0"/>
+    <g transform="translate(30,30)">
+      <rect x="0" y="0" width="440" height="440" rx="88" fill="#0F172A"/>
+      <!-- C frame -->
+      <path d="M310 95 H180 C115 95 80 135 80 220 C80 305 115 345 180 345 H310" 
+            fill="none" stroke="#FFFFFF" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- growth path -->
+      <path d="M150 300 L205 245 L245 273 L315 190" fill="none" stroke="#F97316" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M315 190 L315 242 M315 190 L265 190" fill="none" stroke="#F97316" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" letter-spacing="1.5">
+      <text x="540" y="222" font-size="128" fill="#0F172A">COMMERCIAL</text>
+      <text x="540" y="355" font-size="128" fill="#F97316">GROWTH</text>
+    </g>
+    </svg>

@@ -1,5 +1,8 @@
-export const LOCALBLOOM_LOGO_URL =
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LB-bppf7mCV465zdBWhrKoy2K6V5DGfqa.png"
+/** Horizontal logo for navy hero/footer (#0F172A); blends with section background. */
+export const COMMERCIAL_GROWTH_LOGO_NAVY = "/Commercial_Growth_Logo_Assets/logo_dark.svg"
+
+/** Horizontal logo for light backgrounds (cloud/white sections). */
+export const COMMERCIAL_GROWTH_LOGO_LIGHT = "/Commercial_Growth_Logo_Assets/logo_light.svg"
 
 /** Cal.com event path (team booking page). */
 export const BOOKING_CALL_CAL_LINK = "team/socialbloom/local-bloom-growth-strategy-call"

@@ -19,19 +19,31 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
+        heading: ["var(--font-manrope)", "var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        brand: {
+          navy: "#0F172A",
+          slate: "#334155",
+          cloud: "#F8FAFC",
+          border: "#CBD5E1",
+          signal: "#F97316",
+          sky: "#0EA5E9",
+        },
         accent: {
-          DEFAULT: "#e2d42c",
-          foreground: "#000000",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         primary: {
-          DEFAULT: "#e2d42c",
-          foreground: "#000000",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
