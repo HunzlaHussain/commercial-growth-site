@@ -14,7 +14,7 @@ export default function HomeHeader({ onContactClick }: Props) {
     <header className="container mx-auto py-6 px-4 flex items-center justify-between relative z-10">
       <div className="flex items-center gap-2">
         <Link href="/">
-          <img src={LOCALBLOOM_LOGO_URL} alt="LocalBloom Logo" className="h-10 w-auto cursor-pointer" />
+          <img src={LOCALBLOOM_LOGO_URL} alt="commercial-growth Logo" className="h-10 w-auto cursor-pointer" />
         </Link>
       </div>
       <div className="flex items-center gap-4">

@@ -5,4 +5,3 @@ export const LOCALBLOOM_LOGO_URL =
 export const BOOKING_CALL_CAL_LINK = "team/socialbloom/local-bloom-growth-strategy-call"
 
 export const BOOKING_CALL_URL = `https://cal.com/${BOOKING_CALL_CAL_LINK}`
-

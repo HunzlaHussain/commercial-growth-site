@@ -5,8 +5,8 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 // export const metadata: Metadata = {
-//   title: "Client Partnership Terms & Conditions | LocalBloom",
-//   description: "Client partnership terms and conditions for LocalBloom lead generation and appointment-setting services.",
+//   title: "Client Partnership Terms & Conditions | commercial-growth",
+//   description: "Client partnership terms and conditions for commercial-growth lead generation and appointment-setting services.",
 // }
 
 export default function TermsOfServicePage() {

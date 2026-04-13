@@ -12,7 +12,7 @@ export default function HomeFooter() {
           <div>
             <div className="mb-2">
               <Link href="/">
-                <img src={LOCALBLOOM_LOGO_URL} alt="LocalBloom Logo" className="h-10 w-auto cursor-pointer" />
+                <img src={LOCALBLOOM_LOGO_URL} alt="commercial-growth Logo" className="h-10 w-auto cursor-pointer" />
               </Link>
             </div>
             <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -67,8 +67,8 @@ export default function HomeFooter() {
             <span>
               © 2025{" "}
               <span className="font-bold">
-                <span className="text-white dark:text-white">Local</span>
-                <span className="text-[#e2d42c]">Bloom</span>
+                <span className="text-white dark:text-white">commercial</span>
+                <span className="text-[#e2d42c]">-growth</span>
               </span>{" "}
               LLC. All rights reserved. Part of{" "}
               <a

@@ -6,9 +6,9 @@ import { ThemeProvider } from "@/components/ui/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "LocalBloom - Commercial Lead Generation | Predictable Pipeline of Jobs",
+  title: "commercial-growth - Commercial Lead Generation | Predictable Pipeline of Jobs",
   description:
-    "LocalBloom helps commercial asphalt, cleaning, HVAC, and painting companies generate qualified leads, book more sales appointments, and grow revenue with a proven lead generation system.",
+    "commercial-growth helps commercial asphalt, cleaning, HVAC, and painting companies generate qualified leads, book more sales appointments, and grow revenue with a proven lead generation system.",
   icons: {
     icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fav-2Wz7iwrmp7qWAoAJZ0rWYgggSfnsW6.png",
     apple: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fav-2Wz7iwrmp7qWAoAJZ0rWYgggSfnsW6.png",
@@ -35,7 +35,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
-              name: "LocalBloom",
+              name: "commercial-growth",
               description:
                 "Commercial lead generation system helping service businesses generate qualified leads, book more sales appointments, and grow revenue with a predictable pipeline.",
               url: "https://localbloom.io",

@@ -60,15 +60,15 @@ export default function CalendarModal({ onClose }: CalendarModalProps) {
           };
         })(window, "https://app.cal.com/embed/embed.js", "init");
 
-        Cal("init", "jaafar-from-local-bloom", { origin: "https://cal.com" });
+        Cal("init", "jaafar-from-commercial-growth", { origin: "https://cal.com" });
 
-        Cal.ns["jaafar-from-local-bloom"]("inline", {
+        Cal.ns["jaafar-from-commercial-growth"]("inline", {
           elementOrSelector: "#my-cal-inline",
           config: { "layout": "month_view" },
           calLink: "${BOOKING_CALL_CAL_LINK}",
         });
 
-        Cal.ns["jaafar-from-local-bloom"]("ui", {
+        Cal.ns["jaafar-from-commercial-growth"]("ui", {
           "hideEventTypeDetails": false,
           "layout": "month_view"
         });
