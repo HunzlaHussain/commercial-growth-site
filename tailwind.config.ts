@@ -34,6 +34,7 @@ const config = {
           slate: "#334155",
           cloud: "#F8FAFC",
           border: "#CBD5E1",
+          red: "#B21E2B",
           signal: "#F97316",
           sky: "#0EA5E9",
         },
